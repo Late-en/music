@@ -1,0 +1,12 @@
+server:
+  port: 8888
+  servlet:
+    context-path: "/music"
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/music?serverTimezone=Asia?Beijing&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 875421963adc
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
