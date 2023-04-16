@@ -10,3 +10,6 @@ spring:
     password: 875421963adc
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
+mybatis:
+  type-aliases-package: com.example.music.entity
+  mapper-locations: classpath:mapper/*.xml
