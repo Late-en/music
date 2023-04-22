@@ -1,7 +1,9 @@
-package com.example.music.dao;
+package com.example.music.mapper;
 
 import com.example.music.entity.Collect;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CollectMapper {
     int deleteByPrimaryKey(Integer id);
 

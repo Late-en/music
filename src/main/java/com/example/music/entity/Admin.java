@@ -1,33 +1,29 @@
 package com.example.music.entity;
 
-public class Admin {
-    private Integer id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
-    private String name;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private String password;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Admin implements Serializable {
 
-    public Integer getId() {
-        return id;
-    }
+	private static final long serialVersionUID =  1L;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private Long id;
 
-    public String getName() {
-        return name;
-    }
+	private String name;
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	private String password;
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
 }

@@ -1,125 +1,52 @@
 package com.example.music.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
-    private Integer id;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private String username;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class User implements Serializable {
 
-    private String password;
+	private static final long serialVersionUID =  1L;
 
-    private Byte sex;
+	private Long id;
 
-    private String phoneNum;
+	private String username;
 
-    private String email;
+	private String password;
 
-    private Date birth;
+	private Integer sex;
 
-    private String introduction;
+	private String phoneNum;
 
-    private String location;
+	private String email;
 
-    private String avatar;
+	private Date birth;
 
-    private Date createTime;
+	private String introduction;
 
-    private Date updateTime;
+	private String location;
 
-    public Integer getId() {
-        return id;
-    }
+	private String avatar;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	@TableField(fill = FieldFill.INSERT)
+	private Date createTime;
 
-    public String getUsername() {
-        return username;
-    }
+	@TableField(fill = FieldFill.INSERT_UPDATE)
+	private Date updateTime;
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Byte getSex() {
-        return sex;
-    }
-
-    public void setSex(Byte sex) {
-        this.sex = sex;
-    }
-
-    public String getPhoneNum() {
-        return phoneNum;
-    }
-
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum == null ? null : phoneNum.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public Date getBirth() {
-        return birth;
-    }
-
-    public void setBirth(Date birth) {
-        this.birth = birth;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location == null ? null : location.trim();
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar == null ? null : avatar.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 }

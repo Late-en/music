@@ -1,53 +1,33 @@
 package com.example.music.entity;
 
-public class SongList {
-    private Integer id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
-    private String title;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private String pic;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class SongList implements Serializable {
 
-    private String style;
+	private static final long serialVersionUID =  1L;
 
-    private String introduction;
+	private Long id;
 
-    public Integer getId() {
-        return id;
-    }
+	private String title;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private String pic;
 
-    public String getTitle() {
-        return title;
-    }
+	private String introduction;
 
-    public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
-    }
+	private String style;
 
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
-
-    public String getStyle() {
-        return style;
-    }
-
-    public void setStyle(String style) {
-        this.style = style == null ? null : style.trim();
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
-    }
 }

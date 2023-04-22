@@ -1,7 +1,9 @@
-package com.example.music.dao;
+package com.example.music.mapper;
 
 import com.example.music.entity.RankList;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface RankListMapper {
     int deleteByPrimaryKey(Long id);
 

@@ -1,85 +1,40 @@
 package com.example.music.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Comment {
-    private Integer id;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private Integer userId;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Comment implements Serializable {
 
-    private Integer songId;
+	private static final long serialVersionUID =  1L;
 
-    private Integer songListId;
+	private Long id;
 
-    private String content;
+	private Long userId;
 
-    private Date createTime;
+	private Long songId;
 
-    private Byte type;
+	private Long songListId;
 
-    private Integer up;
+	private String content;
 
-    public Integer getId() {
-        return id;
-    }
+	private Date createTime;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private Integer type;
 
-    public Integer getUserId() {
-        return userId;
-    }
+	private Long up;
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Integer getSongId() {
-        return songId;
-    }
-
-    public void setSongId(Integer songId) {
-        this.songId = songId;
-    }
-
-    public Integer getSongListId() {
-        return songListId;
-    }
-
-    public void setSongListId(Integer songListId) {
-        this.songListId = songListId;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Byte getType() {
-        return type;
-    }
-
-    public void setType(Byte type) {
-        this.type = type;
-    }
-
-    public Integer getUp() {
-        return up;
-    }
-
-    public void setUp(Integer up) {
-        this.up = up;
-    }
 }

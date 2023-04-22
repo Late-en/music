@@ -1,75 +1,38 @@
 package com.example.music.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Singer {
-    private Integer id;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private String name;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Singer implements Serializable {
 
-    private Byte sex;
+	private static final long serialVersionUID =  1L;
 
-    private String pic;
+	private Long id;
 
-    private Date birth;
+	private String name;
 
-    private String location;
+	private Integer sex;
 
-    private String introduction;
+	private String pic;
 
-    public Integer getId() {
-        return id;
-    }
+	private Date birth;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private String location;
 
-    public String getName() {
-        return name;
-    }
+	private String introduction;
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public Byte getSex() {
-        return sex;
-    }
-
-    public void setSex(Byte sex) {
-        this.sex = sex;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
-
-    public Date getBirth() {
-        return birth;
-    }
-
-    public void setBirth(Date birth) {
-        this.birth = birth;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location == null ? null : location.trim();
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
-    }
 }

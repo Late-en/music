@@ -1,43 +1,31 @@
 package com.example.music.entity;
 
-public class RankList {
-    private Long id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 
-    private Long songlistid;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private Long userid;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class RankList implements Serializable {
 
-    private Integer score;
+	private static final long serialVersionUID =  1L;
 
-    public Long getId() {
-        return id;
-    }
+	private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	private Long songListId;
 
-    public Long getSonglistid() {
-        return songlistid;
-    }
+	private Long userId;
 
-    public void setSonglistid(Long songlistid) {
-        this.songlistid = songlistid;
-    }
+	private Long score;
 
-    public Long getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Long userid) {
-        this.userid = userid;
-    }
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
-    }
 }

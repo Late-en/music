@@ -1,95 +1,45 @@
 package com.example.music.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Song {
-    private Integer id;
+/**
+ * @Description  
+ * @Author Late-en  
+ * @Date 2023-04-18 
+ */
 
-    private Integer singerId;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Song implements Serializable {
 
-    private String name;
+	private static final long serialVersionUID =  1L;
 
-    private String introduction;
+	private Long id;
 
-    private Date createTime;
+	private Long singerId;
 
-    private Date updateTime;
+	private String name;
 
-    private String pic;
+	private String introduction;
 
-    private String url;
+	/**
+	 * 发行时间
+	 */
+	private Date createTime;
 
-    private String lyric;
+	private Date updateTime;
 
-    public Integer getId() {
-        return id;
-    }
+	private String pic;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	private String lyric;
 
-    public Integer getSingerId() {
-        return singerId;
-    }
+	private String url;
 
-    public void setSingerId(Integer singerId) {
-        this.singerId = singerId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction == null ? null : introduction.trim();
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic == null ? null : pic.trim();
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
-
-    public String getLyric() {
-        return lyric;
-    }
-
-    public void setLyric(String lyric) {
-        this.lyric = lyric == null ? null : lyric.trim();
-    }
 }
