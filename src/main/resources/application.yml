@@ -40,3 +40,8 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
+
+logging:
+  level:
+    com.example.music: debug
+    com.example.music.mapper: trace

@@ -1,6 +1,8 @@
 package com.example.music.service;
 
 import com.example.music.entity.User;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,9 +13,9 @@ public interface UserService {
 
     boolean existUser(String username);
 
-    boolean deleteUser(User user);
+    boolean deleteUser(Serializable id);
 
-    boolean updateUserMsg(User user);
+    boolean updateUserInfo(User user);
 
     boolean updateUserAvatar(User user);
 
