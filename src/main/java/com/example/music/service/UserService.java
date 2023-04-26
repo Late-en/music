@@ -28,7 +28,7 @@ public interface UserService {
 
     List<User> allUser();
 
-    List<User> userOfId(Integer id);
+    List<User> userOfId(Serializable id);
 
     List<User> getUserInfo(String username);
 }

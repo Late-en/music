@@ -71,7 +71,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> userOfId(Integer id) {
+    public List<User> userOfId(Serializable id) {
         Map<String, Object> params = new HashMap<>();
         params.put("id", id);
         return userMapper.selectByMap(params);

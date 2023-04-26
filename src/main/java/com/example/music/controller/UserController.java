@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import sun.security.util.Password;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -64,10 +65,7 @@ public class UserController {
      */
     @PostMapping("/login/status")
     @ResponseBody
-    public ApiResponse loginStatus(HttpServletRequest req, HttpSession session){
-        String username = req.getParameter("username").trim();
-        String password = req.getParameter("password").trim();
-
+    public ApiResponse loginStatus(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session){
         if(userService.verityPasswd(username, password)){
             session.setAttribute("username", username);
             return ApiResponse.ofSuccess("登陆成功", userService.getUserInfo(username));
@@ -89,8 +87,7 @@ public class UserController {
      */
     @GetMapping("/detail")
     @ResponseBody
-    public ApiResponse userOfId(HttpServletRequest req){
-        Integer id = Integer.parseInt(req.getParameter("id").trim());
+    public ApiResponse userOfId(@RequestParam("id") Long id){
         return ApiResponse.ofSuccess("用户"+id+"信息返回成功", userService.userOfId(id));
     }
 
@@ -178,8 +175,7 @@ public class UserController {
      */
     @GetMapping("/delete")
     @ResponseBody
-    public ApiResponse deleteUser(HttpServletRequest req){
-        Long id = Long.parseLong(req.getParameter("id").trim());
+    public ApiResponse deleteUser(@RequestParam("id") Long id){
         if(userService.deleteUser(id)){
             return ApiResponse.ofSuccess("用户删除成功");
         } else return ApiResponse.ofError("用户删除失败");
