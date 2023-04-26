@@ -11,6 +11,8 @@ import java.util.List;
 public interface SingerService {
     boolean addSinger(Singer singer);
 
+    boolean existSinger(String name);
+
     boolean deleteSinger(Serializable id);
 
     boolean updateSingerInfo(Singer Singer);

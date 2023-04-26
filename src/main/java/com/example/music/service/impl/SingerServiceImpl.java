@@ -24,6 +24,13 @@ public class SingerServiceImpl implements SingerService {
     }
 
     @Override
+    public boolean existSinger(String name){
+        QueryWrapper<Singer> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", name);
+        return singerMapper.selectCount(wrapper) == 1;
+    }
+
+    @Override
     public boolean deleteSinger(Serializable id) {
         return singerMapper.deleteById(id) == 1;
     }
