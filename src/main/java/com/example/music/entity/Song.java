@@ -1,5 +1,7 @@
 package com.example.music.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,11 +31,10 @@ public class Song implements Serializable {
 
 	private String introduction;
 
-	/**
-	 * 发行时间
-	 */
+	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 
+	@TableField(fill = FieldFill.INSERT_UPDATE)
 	private Date updateTime;
 
 	private String pic;

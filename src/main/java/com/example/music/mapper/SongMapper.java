@@ -1,10 +1,11 @@
 package com.example.music.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.music.entity.Song;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SongMapper {
+public interface SongMapper extends BaseMapper<Song> {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Song record);
