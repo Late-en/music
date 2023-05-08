@@ -1,5 +1,7 @@
 package com.example.music.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,10 +33,10 @@ public class Comment implements Serializable {
 
 	private String content;
 
+	@TableField(fill = FieldFill.INSERT)
 	private Date createTime;
 
 	private Integer type;
 
 	private Long up;
-
 }
