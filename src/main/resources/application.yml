@@ -45,3 +45,10 @@ logging:
   level:
     com.example.music: debug
     com.example.music.mapper: trace
+
+spark:
+  spark-home: .
+  ## appName 参数是一个在集群 UI 上展示应用程序的名称
+  app-name: musicDemo
+  ## master 是一个 Spark，Mesos 或 YARN 的 cluster URL，或者指定为在 local mode（本地模式）中运行的 “local” 字符串
+  master: local
